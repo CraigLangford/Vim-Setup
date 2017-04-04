@@ -1,4 +1,4 @@
-cd ~/Project Path
+cd ~/Github/bitstocks
 
 set lines=999 columns=999
 set guioptions -=T
