@@ -1,0 +1,23 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Anaconda",
+		"Djaneiro",
+		"Emmet",
+		"GitGutter",
+		"jQuery",
+		"JsFormat",
+		"Package Control",
+		"PackageResourceViewer",
+		"requirementstxt",
+		"SideBarEnhancements",
+		"Theme - Soda SolarizedDark",
+		"Theme - Sodarized",
+		"Theme - Solarized Flat",
+		"Vintage Escape"
+	]
+}
