@@ -1,0 +1,42 @@
+{
+	"color_scheme": "Packages/Theme - Solarized Flat/Solarized Flat.tmTheme",
+	"detect_indentation": true,
+	"ensure_newline_at_eof_on_save": true,
+	"fade_fold_buttons": false,
+	"font_face": "DejaVu Sans Mono for Powerline",
+	"font_size": 11,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+	],
+	"pep8_ignore":
+	[
+		"E101",
+		"E128",
+		"E225",
+		"E228",
+		"E231",
+		"E261",
+		"E262",
+		"E265",
+		"E266",
+		"E302",
+		"E303",
+		"E501",
+		"E701",
+		"W191",
+		"W292",
+		"W293"
+	],
+	"rulers":
+	[
+		72,
+		99
+	],
+	"scroll_past_end": true,
+	"theme": "Soda SolarizedDark.sublime-theme",
+	"trim_trailing_white_space_on_save": true,
+	"vintage_start_in_command_mode": true,
+	"vintage_use_clipboard": true,
+	"word_wrap": true
+}

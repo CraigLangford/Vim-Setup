@@ -116,6 +116,7 @@ nmap <silent> <C-D> :NERDTreeToggle<CR>
 Plug 'kien/ctrlp.vim'
 "" Ignore pyc files
 set wildignore+=*.pyc
+set wildignore+=*docs/*
 
 " Check for diffs in current file
 Plug 'airblade/vim-gitgutter'
