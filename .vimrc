@@ -214,7 +214,6 @@ let g:EasyGrepFilesToExclude="docs,.git"
 Plug 'jelera/vim-javascript-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'Raimondi/delimitMate'
 imap <C-c> <CR><Esc>O
 Plug 'marijnh/tern_for_vim'
 
