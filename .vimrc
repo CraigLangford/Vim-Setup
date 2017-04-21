@@ -238,7 +238,7 @@ set nomodeline
 " Turn of tabs for current project
 filetype plugin indent off
 set autoindent noexpandtab tabstop=4 shiftwidth=4
-" set tabstop=8 expandtab shiftwidth=4 softtabstop=4
+"set tabstop=8 expandtab shiftwidth=4 softtabstop=4 " PEP8
 " Show tabs
 " set list listchars=tab:→\ ,trail:·
 set list listchars=tab:\|\ ,trail:·
