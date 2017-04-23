@@ -56,10 +56,6 @@ call plug#begin('~/.vim/autoload/plug')
 " Install colors for vim
 Plug 'altercation/vim-colors-solarized'
 
-" Multiple cursors
-Plug 'terryma/vim-multiple-cursors'
-let g:multi_cursor_exit_from_insert_mode = 0
-
 " Tab closing
 Plug 'moll/vim-bbye'
 
