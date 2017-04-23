@@ -29,6 +29,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+
 nnoremap tt <C-W><C-V>
 
 " Tab navigations
@@ -54,6 +55,9 @@ call plug#begin('~/.vim/autoload/plug')
 
 " Install colors for vim
 Plug 'altercation/vim-colors-solarized'
+
+" Multiple cursors
+Plug 'terryma/vim-multiple-cursors'
 
 " Tab closing
 Plug 'moll/vim-bbye'
