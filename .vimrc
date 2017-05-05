@@ -247,3 +247,34 @@ hi! link SpecialKey Comment
 " Allow yanking to clipboard
 nnoremap yy yy"+yy
 vnoremap y ygv"+y
+
+" jump to previous class
+nnoremap ,b :call PythonDec("class", -1)<CR>
+vnoremap ,b :call PythonDec("class", -1)<CR>
+
+" jump to next class
+nnoremap ,f :call PythonDec("class", 1)<CR>
+vnoremap ,f :call PythonDec("class", 1)<CR>
+
+" jump to previous function
+nnoremap ,B :call PythonDec("function", -1)<CR>
+vnoremap ,B :call PythonDec("function", -1)<CR>
+
+" jump to next function
+nnoremap ,F :call PythonDec("function", 1)<CR>
+vnoremap ,F :call PythonDec("function", 1)<CR>
+
+" Go to previous (-1) or next (1) class/function definition
+function! PythonDec(obj, direction)
+  if (a:obj == "class")
+    let objregexp = "^\\s*class\\s\\+[a-zA-Z0-9_]\\+"
+        \ . "\\s*\\((\\([a-zA-Z0-9_,. \\t\\n]\\)*)\\)\\=\\s*:"
+  else
+    let objregexp = "^\\s*def\\s\\+[a-zA-Z0-9_]\\+\\s*(\\_[^:#]*)\\s*:"
+  endif
+  let flag = "W"
+  if (a:direction == -1)
+    let flag = flag."b"
+  endif
+  let res = search(objregexp, flag)
+endfunction
