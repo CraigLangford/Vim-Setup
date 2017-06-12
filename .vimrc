@@ -17,9 +17,6 @@ set relativenumber
 " Remap leader key to comma for easy access
 let mapleader = ','
 
-" Search for highlighted word by ctrl-s
-nnoremap <C-W> yiw/<C-R>"<CR>
-
 "split navigations
 set splitbelow
 set splitright
