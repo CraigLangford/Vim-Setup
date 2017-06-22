@@ -106,6 +106,8 @@ Plug 'jistr/vim-nerdtree-tabs'
 let NERDTreeIgnore = ['\.pyc$']
 " Don't start nerdtree on startup
 let g:nerdtree_tabs_open_on_gui_startup=0
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
 
 " Shows files' git status in nerdtree
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -213,6 +215,8 @@ let vim_markdown_preview_temp_file=0
 
 " Dev Icons
 Plug 'ryanoasis/vim-devicons'
+" the amount of space to use after the glyph character
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 
 call plug#end()
 
