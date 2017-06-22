@@ -109,6 +109,9 @@ let g:nerdtree_tabs_open_on_gui_startup=0
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
 
+" Disable highlighting of exec files
+highlight link NERDTreeExecFile None
+
 " Shows files' git status in nerdtree
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " autocmd vimenter * NERDTree
