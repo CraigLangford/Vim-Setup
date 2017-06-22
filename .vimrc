@@ -219,7 +219,9 @@ let vim_markdown_preview_temp_file=0
 " Dev Icons
 Plug 'ryanoasis/vim-devicons'
 " the amount of space to use after the glyph character
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
+" Remove extra padding
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 0
 
 call plug#end()
 
