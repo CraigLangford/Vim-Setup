@@ -6,6 +6,7 @@ set clipboard=unnamedplus
 
 " Show a line at 99 columns for helping keep length consistent
 let &colorcolumn="72,99"
+set linespace=2
 
 set nocompatible               " required
 filetype on " required
@@ -49,7 +50,6 @@ set foldlevel=50
 nnoremap <space> za
 
 "set the runtime path to include Vundle and initialize
-
 call plug#begin('~/.vim/autoload/plug')
 
 " Install colors for vim
@@ -76,8 +76,8 @@ let g:syntastic_error_symbol = '▶'
 exec 'hi SyntasticErrorSign guifg=red ctermfg=red ' (has("gui_running")? 'guibg=':'ctermbg=') synIDattr(hlID('SignColumn'),'bg')
 
 " Disable most format checking
-" let g:syntastic_python_checkers=['flake8']
-let g:syntastic_python_checkers=['pyflakes']
+let g:syntastic_python_checkers=['flake8']
+" let g:syntastic_python_checkers=['pyflakes']
 let g:syntastic_python_flake8_args='--ignore=E,W'
 let g:syntastic_htmldjango_checkers=['jshint']
 
@@ -87,17 +87,11 @@ set foldmethod=indent
 
 set encoding=utf-8
 
-" Install YCM for autocomplete
-Plug 'Valloric/YouCompleteMe'
-let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
-let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
-let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
-let g:ycm_complete_in_comments = 1 " Completion in comments
-let g:ycm_complete_in_strings = 1 " Completion in string
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" Install NeoAutocompleter
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+let g:deoplete#enable_at_startup = 1
+Plug 'zchee/deoplete-jedi'
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 
 " Add nerdtree to navigate files
 Plug 'scrooloose/nerdtree'
@@ -106,8 +100,8 @@ Plug 'jistr/vim-nerdtree-tabs'
 let NERDTreeIgnore = ['\.pyc$']
 " Don't start nerdtree on startup
 let g:nerdtree_tabs_open_on_gui_startup=0
-let g:NERDTreeDirArrowExpandable = ''
-let g:NERDTreeDirArrowCollapsible = ''
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
 
 " Disable highlighting of exec files
 highlight link NERDTreeExecFile None
@@ -216,6 +210,9 @@ let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_github=1
 let vim_markdown_preview_temp_file=0
 
+" Colorcode the nerdtree glyphs - not currently working in gvim
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
 " Dev Icons
 Plug 'ryanoasis/vim-devicons'
 " the amount of space to use after the glyph character
@@ -237,8 +234,8 @@ set nomodeline
 
 " Turn of tabs for current project
 filetype plugin indent off
-set autoindent noexpandtab tabstop=4 shiftwidth=4
-"set tabstop=8 expandtab shiftwidth=4 softtabstop=4 " PEP8
+"set autoindent noexpandtab tabstop=4 shiftwidth=4
+set tabstop=8 expandtab shiftwidth=4 softtabstop=4 " PEP8
 " Show tabs
 " set list listchars=tab:→\ ,trail:·
 set list listchars=tab:\·\ ,trail:·
