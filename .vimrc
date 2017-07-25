@@ -76,9 +76,9 @@ let g:syntastic_error_symbol = '▶'
 exec 'hi SyntasticErrorSign guifg=red ctermfg=red ' (has("gui_running")? 'guibg=':'ctermbg=') synIDattr(hlID('SignColumn'),'bg')
 
 " Disable most format checking
-" let g:syntastic_python_checkers=['flake8']
-let g:syntastic_python_checkers=['pyflakes']
-let g:syntastic_python_flake8_args='--ignore=E,W'
+let g:syntastic_python_checkers=['flake8']
+" let g:syntastic_python_checkers=['pyflakes']
+" let g:syntastic_python_flake8_args='--ignore=E,W'
 let g:syntastic_htmldjango_checkers=['jshint']
 
 Plug 'tmhedberg/SimpylFold'
@@ -227,6 +227,7 @@ call plug#end()
 
 " Change colorscheme
 syntax enable
+autocmd BufEnter * :syntax sync fromstart
 set background=dark
 colorscheme solarized
 " Add bold to class and def statements
@@ -237,8 +238,8 @@ set nomodeline
 
 " Turn of tabs for current project
 filetype plugin indent off
-set autoindent noexpandtab tabstop=4 shiftwidth=4
-"set tabstop=8 expandtab shiftwidth=4 softtabstop=4 " PEP8
+"set autoindent noexpandtab tabstop=4 shiftwidth=4
+set tabstop=8 expandtab shiftwidth=4 softtabstop=4 " PEP8
 " Show tabs
 " set list listchars=tab:→\ ,trail:·
 set list listchars=tab:\·\ ,trail:·
