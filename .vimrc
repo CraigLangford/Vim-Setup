@@ -16,6 +16,8 @@ filetype plugin on
 set relativenumber
 " Remove LineNumber coloring
 highlight LineNr guibg=NONE
+" Remove search highlighting
+set nohlsearch
 
 " Remap leader key to comma for easy access
 let mapleader = ','
