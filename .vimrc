@@ -92,6 +92,8 @@ set encoding=utf-8
 " Install NeoAutocompleter
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 let g:deoplete#enable_at_startup = 1
+" Close preview window after an option is selected
+autocmd CompleteDone * pclose
 Plug 'zchee/deoplete-jedi'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 let g:tern#filetypes = ['js', 'html'] "Add extra filetypes
