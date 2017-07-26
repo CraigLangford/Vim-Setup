@@ -78,7 +78,7 @@ exec 'hi SyntasticErrorSign guifg=red ctermfg=red ' (has("gui_running")? 'guibg=
 " Disable most format checking
 let g:syntastic_python_checkers=['flake8']
 " let g:syntastic_python_checkers=['pyflakes']
-" let g:syntastic_python_flake8_args='--ignore=E,W'
+let g:syntastic_python_flake8_args='--ignore=E501'
 let g:syntastic_htmldjango_checkers=['jshint']
 
 Plug 'tmhedberg/SimpylFold'
@@ -91,7 +91,8 @@ set encoding=utf-8
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 let g:deoplete#enable_at_startup = 1
 Plug 'zchee/deoplete-jedi'
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+let g:tern#filetypes = ['js', 'html'] "Add extra filetypes
 
 " Add nerdtree to navigate files
 Plug 'scrooloose/nerdtree'
