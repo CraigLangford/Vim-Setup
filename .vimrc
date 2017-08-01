@@ -217,6 +217,7 @@ let vim_markdown_preview_temp_file=0
 
 " Colorcode the nerdtree glyphs - not currently working in gvim
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+let g:NERDTreeLimitedSyntax = 1
 
 " Dev Icons
 Plug 'ryanoasis/vim-devicons'
