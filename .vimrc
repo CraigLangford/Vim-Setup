@@ -19,8 +19,8 @@ highlight LineNr guibg=NONE
 " Remove search highlighting
 set nohlsearch
 
-" Remap leader key to comma for easy access
-let mapleader = ','
+" Remap leader key to space for easy access
+let mapleader = " "
 
 "split navigations
 set splitbelow
@@ -48,8 +48,8 @@ inoremap <C-Z> <C-O>:update<CR>
 " Enable folding
 set foldlevel=50
 
-" Enable folding with the spacebar
-nnoremap <space> za
+" Enable folding with comma
+nnoremap "," za
 
 "set the runtime path to include Vundle and initialize
 call plug#begin('~/.vim/autoload/plug')
@@ -253,20 +253,20 @@ nnoremap yy yy"+yy
 vnoremap y ygv"+y
 
 " jump to previous class
-nnoremap ,b :call PythonDec("class", -1)<CR>
-vnoremap ,b :call PythonDec("class", -1)<CR>
+nnoremap <leader>b :call PythonDec("class", -1)<CR>
+vnoremap <leader>b :call PythonDec("class", -1)<CR>
 
 " jump to next class
-nnoremap ,f :call PythonDec("class", 1)<CR>
-vnoremap ,f :call PythonDec("class", 1)<CR>
+nnoremap <leader>f :call PythonDec("class", 1)<CR>
+vnoremap <leader>f :call PythonDec("class", 1)<CR>
 
 " jump to previous function
-nnoremap ,B :call PythonDec("function", -1)<CR>
-vnoremap ,B :call PythonDec("function", -1)<CR>
+nnoremap <leader>B :call PythonDec("function", -1)<CR>
+vnoremap <leader>B :call PythonDec("function", -1)<CR>
 
 " jump to next function
-nnoremap ,F :call PythonDec("function", 1)<CR>
-vnoremap ,F :call PythonDec("function", 1)<CR>
+nnoremap <leader>F :call PythonDec("function", 1)<CR>
+vnoremap <leader>F :call PythonDec("function", 1)<CR>
 
 " Go to previous (-1) or next (1) class/function definition
 function! PythonDec(obj, direction)
