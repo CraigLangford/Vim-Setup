@@ -1,3 +1,5 @@
+set encoding=utf-8
+
 " Auto reload .vimrc
 autocmd! bufwritepost .vimrc source %
 
@@ -86,8 +88,6 @@ let g:syntastic_htmldjango_checkers=['jshint']
 Plug 'tmhedberg/SimpylFold'
 let g:SimpylFold_docstring_preview=1
 set foldmethod=indent
-
-set encoding=utf-8
 
 " Install NeoAutocompleter
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -235,6 +235,10 @@ set background=dark
 colorscheme solarized
 " Add bold to class and def statements
 hi Statement ctermfg=100 ctermbg=NONE cterm=bold guifg=#859900 guibg=NONE gui=bold
+
+" Set split as a vertical line
+set fillchars+=vert:\│
+hi! VertSplit ctermbg=NONE guibg=NONE
 
 set modelines=0
 set nomodeline
