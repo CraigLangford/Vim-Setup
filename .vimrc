@@ -237,7 +237,7 @@ colorscheme solarized
 hi Statement ctermfg=100 ctermbg=NONE cterm=bold guifg=#859900 guibg=NONE gui=bold
 
 " Set split as a vertical line
-set fillchars+=vert:\│
+set fillchars+=vert:\
 hi! VertSplit ctermbg=NONE guibg=NONE
 
 set modelines=0
