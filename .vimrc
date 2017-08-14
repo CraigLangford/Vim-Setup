@@ -67,23 +67,25 @@ nnoremap twq :w<bar>Bdelete<CR>
 nnoremap tq :Bdelete<CR>
 
 " Syntax checking
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_warning_symbol = '▶'
-let g:syntastic_error_symbol = '▶'
-exec 'hi SyntasticErrorSign guifg=red ctermfg=red ' (has("gui_running")? 'guibg=':'ctermbg=') synIDattr(hlID('SignColumn'),'bg')
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 0
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_warning_symbol = '▶'
+" let g:syntastic_error_symbol = '▶'
+" exec 'hi SyntasticErrorSign guifg=red ctermfg=red ' (has("gui_running")? 'guibg=':'ctermbg=') synIDattr(hlID('SignColumn'),'bg')
+
+Plug 'w0rp/ale'
 
 " Disable most format checking
-let g:syntastic_python_checkers=['flake8']
+" let g:syntastic_python_checkers=['flake8']
 " let g:syntastic_python_checkers=['pyflakes']
-let g:syntastic_python_flake8_args='--ignore=E501'
-let g:syntastic_htmldjango_checkers=['jshint']
+" let g:syntastic_python_flake8_args='--ignore=E501'
+" let g:syntastic_htmldjango_checkers=['jshint']
 
 Plug 'tmhedberg/SimpylFold'
 let g:SimpylFold_docstring_preview=1
@@ -237,7 +239,7 @@ colorscheme solarized
 hi Statement ctermfg=100 ctermbg=NONE cterm=bold guifg=#859900 guibg=NONE gui=bold
 
 " Set split as a vertical line
-set fillchars+=vert:\│
+set fillchars+=vert:\ 
 hi! VertSplit ctermbg=NONE guibg=NONE
 
 set modelines=0
@@ -286,3 +288,9 @@ function! PythonDec(obj, direction)
   endif
   let res = search(objregexp, flag)
 endfunction
+
+let g:ale_sign_warning='●'
+hi ALEErrorSign ctermfg=Red ctermbg=0
+let g:ale_sign_error='●'
+hi ALEWarningSign ctermfg=LightYellow ctermbg=0
+let g:airline#extensions#ale#enabled = 1
