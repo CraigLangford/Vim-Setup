@@ -16,10 +16,6 @@ filetype plugin on
 
 " Set relative line number for quicker movements
 set relativenumber
-" Remove LineNumber coloring
-highlight LineNr guibg=NONE
-" Remove search highlighting
-set nohlsearch
 
 " Remap leader key to space for easy access
 let mapleader = " "
@@ -239,7 +235,7 @@ colorscheme solarized
 hi Statement ctermfg=100 ctermbg=NONE cterm=bold guifg=#859900 guibg=NONE gui=bold
 
 " Set split as a vertical line
-set fillchars+=vert:\ 
+set fillchars+=vert:\│
 hi! VertSplit ctermbg=NONE guibg=NONE
 
 set modelines=0
@@ -290,7 +286,13 @@ function! PythonDec(obj, direction)
 endfunction
 
 let g:ale_sign_warning='●'
-hi ALEErrorSign ctermfg=Red ctermbg=0
+hi ALEErrorSign ctermfg=Red ctermbg=none
 let g:ale_sign_error='●'
-hi ALEWarningSign ctermfg=LightYellow ctermbg=0
+hi ALEWarningSign ctermfg=LightYellow ctermbg=none
 let g:airline#extensions#ale#enabled = 1
+hi LineNr ctermbg=none
+hi CursorLineNr cterm=bold ctermfg=White
+hi SignColumn ctermbg=none
+
+" Remove search highlighting
+set nohlsearch
