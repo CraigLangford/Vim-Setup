@@ -76,6 +76,7 @@ nnoremap tq :Bdelete<CR>
 " exec 'hi SyntasticErrorSign guifg=red ctermfg=red ' (has("gui_running")? 'guibg=':'ctermbg=') synIDattr(hlID('SignColumn'),'bg')
 
 Plug 'w0rp/ale'
+let g:ale_python_flake8_args = '--ignore=E501'
 
 " Disable most format checking
 " let g:syntastic_python_checkers=['flake8']
