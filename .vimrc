@@ -119,9 +119,10 @@ set wildignore+=*docs/*
 
 " Check for diffs in current file
 Plug 'airblade/vim-gitgutter'
-let g:gitgutter_sign_added = '➕'
-let g:gitgutter_sign_modified = '⯀'
-let g:gitgutter_sign_removed = '⎽'
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '▪'
+let g:gitgutter_sign_removed = '_'
+let g:gitgutter_sign_modified_removed = '_'
 
 " Powerline for VIM
 Plug 'vim-airline/vim-airline'
@@ -285,14 +286,23 @@ function! PythonDec(obj, direction)
   let res = search(objregexp, flag)
 endfunction
 
-let g:ale_sign_warning='●'
-hi ALEErrorSign ctermfg=Red ctermbg=none
-let g:ale_sign_error='●'
+" Make syntax warnings bright and bold
+let g:ale_sign_warning = '●'
+let g:ale_sign_error   = '●'
 hi ALEWarningSign ctermfg=LightYellow ctermbg=none
+hi ALEErrorSign   ctermfg=Red         ctermbg=none
 let g:airline#extensions#ale#enabled = 1
-hi LineNr ctermbg=none
-hi CursorLineNr cterm=bold ctermfg=White
-hi SignColumn ctermbg=none
+
+" Disable any column highlighting
+hi SignColumn   ctermbg=none
+hi LineNr       ctermbg=none
+hi CursorLineNr cterm=bold   ctermfg=White
 
 " Remove search highlighting
 set nohlsearch
+
+"Make git gutter icons bright and bold
+hi GitGutterAdd          cterm=bold ctermfg=46
+hi GitGutterChange       cterm=bold ctermfg=165
+hi GitGutterChangeDelete cterm=bold ctermfg=1
+hi GitGutterDelete       cterm=bold ctermfg=1
