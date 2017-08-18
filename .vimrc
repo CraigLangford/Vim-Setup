@@ -77,12 +77,7 @@ nnoremap tq :Bdelete<CR>
 
 Plug 'w0rp/ale'
 let g:ale_python_flake8_args = '--ignore=E501'
-
-" Disable most format checking
-" let g:syntastic_python_checkers=['flake8']
-" let g:syntastic_python_checkers=['pyflakes']
-" let g:syntastic_python_flake8_args='--ignore=E501'
-" let g:syntastic_htmldjango_checkers=['jshint']
+let g:ale_python_pylint_options = '--disable=C0103'
 
 Plug 'tmhedberg/SimpylFold'
 let g:SimpylFold_docstring_preview=1
@@ -123,6 +118,9 @@ set wildignore+=*docs/*
 
 " Check for diffs in current file
 Plug 'airblade/vim-gitgutter'
+let g:gitgutter_sign_added = '➕'
+let g:gitgutter_sign_modified = '⯀'
+let g:gitgutter_sign_removed = '⎽'
 
 " Powerline for VIM
 Plug 'vim-airline/vim-airline'
