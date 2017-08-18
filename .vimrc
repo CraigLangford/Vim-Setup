@@ -3,8 +3,9 @@ set encoding=utf-8
 " Auto reload .vimrc
 autocmd! bufwritepost .vimrc source %
 
-" Set clipboard to default
+" Set clipboard to default and add mouse support
 set clipboard=unnamedplus
+set mouse=a
 
 " Show a line at 99 columns for helping keep length consistent
 let &colorcolumn="72,99"
