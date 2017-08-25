@@ -274,10 +274,9 @@ vnoremap <leader>F :call PythonDec("function", 1)<CR>
 " Go to previous (-1) or next (1) class/function definition
 function! PythonDec(obj, direction)
   if (a:obj == "class")
-    let objregexp = "^\\s*class\\s\\+[a-zA-Z0-9_]\\+"
-        \ . "\\s*\\((\\([a-zA-Z0-9_,. \\t\\n]\\)*)\\)\\=\\s*:"
+    let objregexp = "^\\s*class\\s.*"
   else
-    let objregexp = "^\\s*def\\s\\+[a-zA-Z0-9_]\\+\\s*(\\_[^:#]*)\\s*:"
+    let objregexp = "^\\s*def\\s.*"
   endif
   let flag = "W"
   if (a:direction == -1)
