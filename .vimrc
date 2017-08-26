@@ -63,19 +63,6 @@ Plug 'moll/vim-bbye'
 nnoremap twq :w<bar>Bdelete<CR>
 nnoremap tq :Bdelete<CR>
 
-" Syntax checking
-" Plug 'vim-syntastic/syntastic'
-
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 0
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_warning_symbol = '▶'
-" let g:syntastic_error_symbol = '▶'
-" exec 'hi SyntasticErrorSign guifg=red ctermfg=red ' (has("gui_running")? 'guibg=':'ctermbg=') synIDattr(hlID('SignColumn'),'bg')
-
 Plug 'w0rp/ale'
 let g:ale_python_flake8_args = '--ignore=E501'
 let g:ale_python_pylint_options = '--disable=C0103'
