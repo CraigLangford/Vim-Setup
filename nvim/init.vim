@@ -92,10 +92,7 @@ nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 
-Plug 'tmhedberg/SimpylFold'
-autocmd FileType python setlocal foldlevel=2
-" let g:SimpylFold_docstring_preview=1
-" set foldmethod=syntax
+set foldmethod=syntax
 
 " Install NeoAutocompleter
 " Close preview window after an option is selected
