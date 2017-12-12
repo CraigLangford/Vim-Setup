@@ -25,11 +25,9 @@ let mapleader = " "
 set splitbelow
 set splitright
 nnoremap <C-J> <C-W><C-J>
-
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
 
 nnoremap tt <C-W><C-V>
 
@@ -43,9 +41,6 @@ nnoremap <C-\> :pop<CR>
 noremap <C-Z> :update<CR>
 vnoremap <C-Z> <C-C>:update<CR>
 inoremap <C-Z> <C-O>:update<CR>
-
-" Enable folding
-" set foldlevel=50
 
 " Enable folding with comma
 nnoremap <leader><leader> za
@@ -63,20 +58,23 @@ Plug 'moll/vim-bbye'
 nnoremap twq :w<bar>Bdelete<CR>
 nnoremap tq :Bdelete<CR>
 
-" Plug 'w0rp/ale'
-" let g:ale_python_flake8_args = '--ignore=E501'
-" let g:ale_python_pylint_options = '--disable=C0103'
 Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 
 " Multi-entry selection UI.
 Plug 'junegunn/fzf'
 
+nnoremap <c-p> :FZF<cr>
+
 " Completion integration with deoplete.
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 let g:deoplete#enable_at_startup = 1
+set completeopt-=preview
+" autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " Showing function signature and inline doc.
 Plug 'Shougo/echodoc.vim'
+let g:echodoc_enable_at_startup=1
+set noshowmode
 
 " Required for operations modifying multiple buffers like rename.
 set hidden
@@ -92,14 +90,7 @@ nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 
-set foldmethod=syntax
-
-" Install NeoAutocompleter
-" Close preview window after an option is selected
-" autocmd CompleteDone * pclose
-" Plug 'zchee/deoplete-jedi'
-" Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-" let g:tern#filetypes = ['js', 'html'] "Add extra filetypes
+autocmd BufNewFile,BufRead *.py set foldmethod=syntax
 
 " Add nerdtree to navigate files
 Plug 'scrooloose/nerdtree'
@@ -108,8 +99,6 @@ Plug 'jistr/vim-nerdtree-tabs'
 let NERDTreeIgnore = ['\.pyc$']
 " Don't start nerdtree on startup
 let g:nerdtree_tabs_open_on_gui_startup=0
-" let g:NERDTreeDirArrowExpandable = ''
-" let g:NERDTreeDirArrowCollapsible = ''
 
 " Disable highlighting of exec files
 highlight link NERDTreeExecFile None
@@ -118,12 +107,6 @@ highlight link NERDTreeExecFile None
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " autocmd vimenter * NERDTree
 nmap <silent> <C-D> :NERDTreeToggle<CR>
-
-" For searching current file tree
-Plug 'kien/ctrlp.vim'
-"" Ignore pyc files
-set wildignore+=*.pyc
-set wildignore+=*docs/*
 
 " Check for diffs in current file
 Plug 'airblade/vim-gitgutter'
@@ -166,16 +149,7 @@ let g:airline_symbols.whitespace = 'Ξ'
 set nu
 
 Plug 'tpope/vim-fugitive'
-
-" Plug 'tpope/vim-surround'
-" let b:surround_{char2nr("v")} = "{{ \r }}"
-" let b:surround_{char2nr("{")} = "{{ \r }}"
-" let b:surround_{char2nr("%")} = "{% \r %}"
-" let b:surround_{char2nr("b")} = "{% block \1block name: \1 %}\r{% endblock \1\1 %}"
-" let b:surround_{char2nr("i")} = "{% if \1condition: \1 %}\r{% endif %}"
-" let b:surround_{char2nr("w")} = "{% with \1with: \1 %}\r{% endwith %}"
-" let b:surround_{char2nr("f")} = "{% for \1for loop: \1 %}\r{% endfor %}"
-" let b:surround_{char2nr("c")} = "{% comment %}\r{% endcomment %}"
+set diffopt+=vertical
 
 Plug 'SirVer/ultisnips'
 let g:UltiSnipsExpandTrigger       = "<c-b>"
@@ -184,13 +158,6 @@ let g:UltiSnipsJumpBackwardTrigger = "<c-z>"
 let g:UltiSnipsListSnippets        = "<c-e>" "List possible snippets based on current file
 
 Plug 'honza/vim-snippets'
-
-Plug 'bingaman/vim-sparkup'
-
-" Plug 'vim-scripts/taglist.vim'
-" nnoremap <silent> <c-t> :TlistToggle<CR>
-" let Tlist_Use_Right_Window = 1
-" let Tlist_WinWidth = 50
 
 " Add comment capabilities
 Plug 'scrooloose/nerdcommenter'
@@ -205,22 +172,9 @@ let g:NERDDefaultAlign = 'left'
 Plug 'dkprice/vim-easygrep'
 let g:EasyGrepCommand=1
 let g:EasyGrepRecursive=1
-let g:EasyGrepDefaultUserPattern="*.py *.html"
+let g:EasyGrepDefaultUserPattern="*.py *.json, *.txt, *.sh, *.md"
 let g:EasyGrepMode='User'
 let g:EasyGrepFilesToExclude="docs,.git"
-
-" Javascript
-" Plug 'jelera/vim-javascript-syntax'
-" Plug 'pangloss/vim-javascript'
-" Plug 'nathanaelkane/vim-indent-guides'
-" imap <C-c> <CR><Esc>O
-" Plug 'marijnh/tern_for_vim'
-
-" Markdown editing
-" Plug 'JamshedVesuna/vim-markdown-preview'
-" let vim_markdown_preview_hotkey='<C-m>'
-" let vim_markdown_preview_github=1
-" let vim_markdown_preview_temp_file=0
 
 " Colorcode the nerdtree glyphs - not currently working in gvim
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -239,7 +193,10 @@ call plug#end()
 syntax enable
 autocmd BufEnter * :syntax sync fromstart
 set background=dark
+let g:solarized_termtrans = 1
 colorscheme solarized
+hi Visual ctermbg=NONE
+
 " Add bold to class and def statements
 hi Statement ctermfg=100 ctermbg=NONE cterm=bold guifg=#859900 guibg=NONE gui=bold
 
@@ -292,13 +249,6 @@ function! PythonDec(obj, direction)
   endif
   let res = search(objregexp, flag)
 endfunction
-
-" Make syntax warnings bright and bold
-" let g:ale_sign_warning = '●'
-" let g:ale_sign_error   = '●'
-" hi ALEWarningSign ctermfg=LightYellow ctermbg=none
-" hi ALEErrorSign   ctermfg=Red         ctermbg=none
-" let g:airline#extensions#ale#enabled = 1
 
 " Disable any column highlighting
 hi SignColumn   ctermbg=none
