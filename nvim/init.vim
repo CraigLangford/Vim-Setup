@@ -8,7 +8,7 @@ set clipboard=unnamedplus
 set mouse=a
 
 " Show a line at 99 columns for helping keep length consistent
-let &colorcolumn="119"
+let &colorcolumn="72"
 set linespace=2
 
 set nocompatible               " required
@@ -72,7 +72,10 @@ Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/fzf'
 
 " Completion integration with deoplete.
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 let g:deoplete#enable_at_startup = 1
 
 " Showing function signature and inline doc.
@@ -83,6 +86,7 @@ set hidden
 
 let g:LanguageClient_serverCommands = {
     \ 'python': ['pyls'],
+    \ 'javascript': ['~/Applications/javascript-typescript-langserver/lib/javascript-typescript-stdio'],
     \ }
 
 " Automatically start language servers.
@@ -213,11 +217,7 @@ let g:EasyGrepMode='User'
 let g:EasyGrepFilesToExclude="docs,.git"
 
 " Javascript
-" Plug 'jelera/vim-javascript-syntax'
-" Plug 'pangloss/vim-javascript'
-" Plug 'nathanaelkane/vim-indent-guides'
-" imap <C-c> <CR><Esc>O
-" Plug 'marijnh/tern_for_vim'
+Plug 'mhartington/nvim-typescript'
 
 " Markdown editing
 " Plug 'JamshedVesuna/vim-markdown-preview'
